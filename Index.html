@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Night of Freedom - Verification</title>
 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: #1d1d1d;
+  padding: 30px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  color: #ccc;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: #111;
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#message {
+  margin-top: 20px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Night of Freedom</h1>
+
+<p>Please enter your verification details.</p>
+
+<label>Reference Number</label>
+<input id="reference" type="text" placeholder="Enter reference number">
+
+<label>Hotel Room Number</label>
+<input id="room" type="text" placeholder="Enter hotel room number">
+
+<button onclick="verify()">Continue</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+function verify() {
+
+  const reference = document.getElementById("reference").value.trim();
+  const room = document.getElementById("room").value.trim();
+  const message = document.getElementById("message");
+
+  if (reference === "" || room === "") {
+    message.style.display = "block";
+    message.innerHTML = "Please enter your reference number and hotel room number.";
+    return;
+  }
+
+  message.style.display = "block";
+  message.innerHTML = "Your details have been received.";
+}
+</script>
+
+</body>
+</html>
