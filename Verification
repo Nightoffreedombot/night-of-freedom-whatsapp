@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night of Freedom - Reference Verification</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
+    .box {
+      width: 90%;
+      max-width: 400px;
+      background: #1d1d1d;
+      padding: 30px;
+      border-radius: 14px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 15px 0;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background: #111;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #292929;
+      border-radius: 10px;
+    }
+
+    .pending {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>Night of Freedom</h1>
+    <p>Reference Verification</p>
+
+    <input id="reference" type="text" placeholder="Enter your reference number">
+
+    <button onclick="verifyReference()">Verify</button>
+
+    <div id="result">
+      <p>Reference Number: <strong>2522</strong></p>
+      <p>Room Number: <span class="pending">Pending</span></p>
+    </div>
+  </div>
+
+  <script>
+    function verifyReference() {
+      const reference = document.getElementById("reference").value.trim();
+      const result = document.getElementById("result");
+
+      if (reference === "2522") {
+        result.style.display = "block";
+      } else {
+        result.style.display = "block";
+        result.innerHTML = "<p>Reference number not found.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
